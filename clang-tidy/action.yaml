@@ -170,6 +170,7 @@ runs:
       with:
         github_token: ${{ inputs.token }}
         clang_tidy_fixes: fixes.yaml
+        repo_path_prefix: "/__w" # yamllint disable-line
 
     - name: Upload artifacts
       if: ${{ steps.check-report-log-existence.outputs.exists == 'true' && steps.check-fixes-yaml-existence.outputs.exists == 'true' }}
